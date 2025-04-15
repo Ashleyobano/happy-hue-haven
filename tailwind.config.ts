@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,18 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+        // Lifestyle blog custom colors
+        blog: {
+          mint: '#88E2CE',
+          coral: '#FFA49E',
+          peach: '#FFDDB0',
+          lavender: '#D1A7E8',
+          sunshine: '#FFE27A',
+          navy: '#394B78',
+          forestGreen: '#3C7659',
+          blush: '#FFD0D6',
+        }
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,12 +96,36 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+        'fade-in': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(10px)'
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)'
+          }
+        },
+        'slide-in': {
+          '0%': {
+            transform: 'translateX(-100%)'
+          },
+          '100%': {
+            transform: 'translateX(0)'
+          }
+        }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+        'fade-in': 'fade-in 0.6s ease-out',
+        'slide-in': 'slide-in 0.4s ease-out'
+			},
+      fontFamily: {
+        'display': ['Playfair Display', 'serif'],
+        'sans': ['Inter', 'sans-serif'],
+      }
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
